@@ -1,4 +1,4 @@
-<%= form_for @article, url: '/articles/'+@article.slug.to_s do |f| %>
+<%= form_for @article, :html: { class: 'requiredForm' }, url: '/articles/'+@article.slug.to_s do |f| %>
 <% if @article.errors.any? %>
 <div id="error_explanation">
   <h2>
