@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find_by(slug: params[:slug])
+    @article = Article.find_by(id: params[:id])
     if !@article.update(article_params)
       render 'edit'
     end
