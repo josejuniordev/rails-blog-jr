@@ -4,6 +4,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+
+    if @article.errors.count
+      redirect_to '/article/new'
+    end
+
     @article.slug = @article.title.parameterize
     @article.save
     redirect_to '/articles/' + @article.slug.to_s
